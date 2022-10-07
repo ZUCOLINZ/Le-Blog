@@ -1,3 +1,5 @@
+import Heropic from "../../assets/images/everst.jpg";
+
 import "./header.css";
 
 const Header = () => {
@@ -7,7 +9,7 @@ const Header = () => {
         <span className="headerTitleSm">React & Node</span>
         <span className="headerTitleLg">Blog</span>
       </div>
-      <img className="headerImg" src="" alt="" />
+      <img className="headerImg" src={Heropic} alt="" />
     </div>
   );
 };
