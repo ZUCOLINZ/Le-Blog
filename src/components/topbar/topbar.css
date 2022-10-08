@@ -6,7 +6,7 @@
   top: 0;
   display: flex;
   align-items: center;
-  font-family: "Josephin Sans", "sans serif";
+  font-family: "Lora", "sans serif";
   z-index: 999;
 }
 
@@ -46,6 +46,7 @@
   margin-right: 20px;
   font-size: 18px;
   font-weight: 300;
+  color: #444;
   cursor: pointer;
 }
 .topSearchIcon {
