@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import "./topbar.css";
-import ProfilePic from "../../assets/images/person3.jpg";
+import DefaultPic from "../../assets/images/person4.png";
+import React, { useContext } from "react";
+import { Context } from "../../context/Context";
 
-const Topbar = () => {
-  const user = false;
+const TopBar = () => {
+  const { user, dispatch } = useContext(Context);
+  // const defaultPic = "http://localhost:5050/images/blank-profile.webp";
+  const PF = "http://localhost:5050/images/";
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <div className="top">
       <div className="topLeft">
@@ -34,12 +42,21 @@ const Topbar = () => {
               WRITE
             </Link>
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <img className="topImage" src={ProfilePic} alt="" />
+          <Link className="link navName" to="/settings">
+            <span>{user.username}</span>
+            <img
+              className="topImage"
+              src={user.profilePic ? PF + user.profilePic : DefaultPic}
+              alt=""
+            />
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
