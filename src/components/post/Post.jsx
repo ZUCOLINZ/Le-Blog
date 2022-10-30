@@ -1,25 +1,31 @@
 import "./post.css";
-import Postpic from "../../assets/images/amazonbot.jpg";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-const Post = () => {
+// import Postpic from "../../assets/images/amazonbot.jpg";
+
+const Post = ({ post }) => {
+  const PF = "http://localhost:5050/images/";
   return (
     <div className="post">
-      <img className="postImg" src={Postpic} alt="" />
+      {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
         <div className="postCats">
-          <span className="postCat">Music</span>
-          <span className="postCat">Life</span>
+          {post.categories.map((c, i) => (
+            <span key={i} className="postCat">
+              {c.name}
+            </span>
+          ))}
         </div>
-        <span className="postTitle">Lorem ipsum dolor sit amet.</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
-      <p className="postDesc">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, maxime
-        enim quia ipsum eveniet debitis voluptatibus quibusdam similique ratione
-        recusandae aliquid cum adipisci modi labore possimus? Mollitia ullam
-        aspernatur ipsam?
-      </p>
+      <p className="postDesc">{post.desc}</p>
     </div>
   );
 };

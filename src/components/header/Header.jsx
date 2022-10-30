@@ -1,6 +1,8 @@
 import Heropic from "../../assets/images/everst.jpg";
 
 import "./header.css";
+import React, { useState } from "react";
+
 
 const Header = () => {
   return (

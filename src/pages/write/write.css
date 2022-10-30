@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+textarea {
+  height: 25vh;
+}
+
 .writeIcon {
   width: 25px;
   height: 25px;
@@ -54,4 +58,14 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+}
+.writeOptionPostCats {
+  display: block;
+  font-family: "Varela Round", sans-serif;
+  font-size: 21px;
+  color: #be9656;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-left: -13em;
+  cursor: pointer;
 }

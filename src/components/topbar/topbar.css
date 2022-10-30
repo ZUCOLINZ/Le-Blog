@@ -6,7 +6,9 @@
   top: 0;
   display: flex;
   align-items: center;
-  font-family: "Lora", "sans serif";
+  font-family: "Montserrat";
+  /* font-weight: 600; */
+  /* font-family: "Lora", "sans serif"; */
   z-index: 999;
 }
 
@@ -32,6 +34,9 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
+  /* background-image: url();
+  z-index: 10000; */
 }
 
 .topList {
@@ -54,4 +59,17 @@
   color: #666;
   cursor: pointer;
   margin-left: 15px;
+}
+.navName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navName span {
+  margin: 1em;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-style: italic;
 }
